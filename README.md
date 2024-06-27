@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [ ] Make it Deploy
+- [x] Make it Deploy
 - [ ] Scaffold basic UI with mock data
 - [ ] Set up postreSQL DB
 - [ ] Link DB to UI
