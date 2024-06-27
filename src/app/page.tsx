@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { db } from "~/server/db";
 
 const placeholderUrls = [
   "https://utfs.io/f/92707176-4db9-4351-90ef-a49377e5c92d-foqhiy.png",
@@ -12,14 +13,17 @@ const mockImages = placeholderUrls.map((url, idx) => ({
   url,
 }));
 
-export default function HomePage() {
+export default async function HomePage() {
+  const gitgud = await db.query.posts.findMany();
+  console.log(gitgud);
+  
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
         {
           [...mockImages, ...mockImages, ...mockImages].map((image) => {
             return (
-              <div key={image.id + Math.random()} className="w-60">
+              <div key={image.id + Math.random()} className="md:w-60 w-full">
                 <img src={image.url} />
               </div>
             )
