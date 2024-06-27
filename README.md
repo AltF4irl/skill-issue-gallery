@@ -6,7 +6,7 @@
 - [x] Scaffold basic UI with mock data
 - [x] Mod Build Proc
 - [x] Set up postreSQL DB
-- [ ] Link DB to UI
+- [x] Link DB to UI
 - [ ] Add Auth
 - [ ] Add img upload
 - [ ] Error Management
