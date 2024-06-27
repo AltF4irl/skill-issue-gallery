@@ -7,8 +7,9 @@
 - [x] Mod Build Proc
 - [x] Set up postreSQL DB
 - [x] Link DB to UI
-- [ ] Add Auth
+- [x] Add Auth
 - [ ] Add img upload
+- [ ] taint (server only)
 - [ ] Error Management
 - [ ] Routing
 - [ ] Delete Button
