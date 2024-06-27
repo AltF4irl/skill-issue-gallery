@@ -5,7 +5,7 @@
 - [x] Make it Deploy
 - [x] Scaffold basic UI with mock data
 - [x] Mod Build Proc
-- [ ] Set up postreSQL DB
+- [x] Set up postreSQL DB
 - [ ] Link DB to UI
 - [ ] Add Auth
 - [ ] Add img upload
