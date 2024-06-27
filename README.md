@@ -3,7 +3,8 @@
 ## TODO
 
 - [x] Make it Deploy
-- [ ] Scaffold basic UI with mock data
+- [x] Scaffold basic UI with mock data
+- [x] Mod Build Proc
 - [ ] Set up postreSQL DB
 - [ ] Link DB to UI
 - [ ] Add Auth
