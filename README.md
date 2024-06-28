@@ -10,6 +10,7 @@
 - [x] Add Auth
 - [ ] Add img upload
 - [ ] taint (server only)
+- [ ] Implement Next/Image
 - [ ] Error Management
 - [ ] Routing
 - [ ] Delete Button
