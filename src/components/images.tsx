@@ -20,7 +20,7 @@ export default async function Images() {
               alt={image.name}
               width={480}
               height={240}
-              style={{ objectFit: "contain", height: "100%" }}
+              style={{ objectFit: "contain" }}
             />
             <p>{truncateStr(image.name)}</p>
           </div>

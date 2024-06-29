@@ -11,7 +11,7 @@
 - [x] Add img upload
 - [x] taint (server only)
 - [x] Implement Next/Image
-- [ ] Error Management
+- [x] Error Management with sentry
 - [ ] Routing
 - [ ] Delete Button
 - [ ] Analytics
