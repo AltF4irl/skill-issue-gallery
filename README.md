@@ -8,9 +8,9 @@
 - [x] Set up postreSQL DB
 - [x] Link DB to UI
 - [x] Add Auth
-- [ ] Add img upload
-- [ ] taint (server only)
-- [ ] Implement Next/Image
+- [x] Add img upload
+- [x] taint (server only)
+- [x] Implement Next/Image
 - [ ] Error Management
 - [ ] Routing
 - [ ] Delete Button
