@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { getUserImages } from "~/server/queries";
 
@@ -14,14 +15,16 @@ export default async function Images() {
     <div className="flex flex-wrap justify-center gap-4">
       {images.map((image) => {
         return (
-          <div key={image.id} className="flex w-full flex-col md:w-60 md:h-35">
-            <Image
-              src={image.url}
-              alt={image.name}
-              width={480}
-              height={240}
-              style={{ objectFit: "contain" }}
-            />
+          <div key={image.id} className="md:h-35 flex w-full flex-col md:w-60">
+            <Link href={`/img/${image.id}`}>
+              <Image
+                src={image.url}
+                alt={image.name}
+                width={480}
+                height={240}
+                style={{ objectFit: "contain" }}
+              />
+            </Link>
             <p>{truncateStr(image.name)}</p>
           </div>
         );

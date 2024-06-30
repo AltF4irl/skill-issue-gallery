@@ -16,3 +16,13 @@ export const getUserImages = async () => {
   });
   return images;
 };
+
+export const getImage = async (id: number) => {
+  const image = await db.query.posts.findFirst({
+    where: (model, { eq }) => eq(model.id, id),
+  });
+
+  if (!image) throw new Error('Image does not exist.');
+
+  return image;
+};

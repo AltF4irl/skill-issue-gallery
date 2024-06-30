@@ -10,7 +10,7 @@ export default async function HomePage() {
         <div className="min-h-screen h-full w-full text-2xl flex justify-center items-center">Please Sign in above.</div>
       </SignedOut>
       <SignedIn>
-        <Images />
+          <Images />
       </SignedIn>
     </main>
   );
