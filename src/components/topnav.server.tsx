@@ -1,32 +1,29 @@
 "use client";
 
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { UploadButton } from "../utils/uploadthing";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { SimpleUploadButton } from "./simple-upload-button";
 
 export default function TopNav() {
-  const router = useRouter();
   return (
-    <nav className="flex md:flex-col items-center justify-between border-b md:border-r border-neutral-800 md:border-b-0 bg-neutral-950 p-4 text-xl font-semibold md:h-screen">
-      <Link
-        className="mb-2 flex text-center justify-start"
-        href="/"
-      >
-        <div>Skill Issue</div>
+    <nav className="flex items-center justify-between border-b border-neutral-800 p-4 text-xl font-semibold md:h-screen md:flex-col md:border-b-0 md:border-r">
+      <Link className="flex justify-start text-center" href="/">
+        <div className="hidden md:!block">S<br />k<br />i<br />l<br />l<br /><br /> I<br />s<br />s<br />u<br />e</div>
+        <div className="md:hidden">Skill Issue</div>
       </Link>
-      <div className="flex flex-row md:flex-col items-center">
+      <div className="flex flex-row items-center gap-4 md:flex-col">
         <SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
-          <UploadButton
-            endpoint="imageUploader"
-            onClientUploadComplete={() => {
-              router.refresh();
+          <SimpleUploadButton />
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "md:h-10 md:w-10",
+              },
             }}
           />
-          <UserButton />
         </SignedIn>
       </div>
     </nav>
