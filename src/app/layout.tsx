@@ -45,11 +45,11 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`flex flex-col gap-4 font-sans ${inter.variable}`}>
+        <body className={`flex flex-col gap-4 font-sans ${inter.variable} md:flex-row`}>
           <TopNav />
           {children}
           {modal}
-          <div id="" />
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
