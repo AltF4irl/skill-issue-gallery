@@ -15,14 +15,14 @@ export default async function Images() {
     <div className="flex flex-wrap justify-center gap-4 py-2 md:p-4">
       {images.map((image) => {
         return (
-          <div key={image.id} className="md:h-35 flex w-full flex-col md:w-60">
+          <div key={image.id} className="flex w-screen flex-col md:w-60">
             <Link href={`/img/${image.id}`}>
               <Image
                 src={image.url}
                 alt={image.name}
                 width={480}
                 height={240}
-                style={{ objectFit: "contain" }}
+                className="md:object-cover md:h-40 w-screen md:w-60"
               />
             </Link>
             <p>{truncateStr(image.name)}</p>
