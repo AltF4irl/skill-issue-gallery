@@ -15,7 +15,7 @@ export default function TopNav() {
       >
         <div>Skill Issue</div>
       </Link>
-      <div className="flex flex-row md:flex-col items-center ">
+      <div className="flex flex-row md:flex-col items-center">
         <SignedOut>
           <SignInButton />
         </SignedOut>

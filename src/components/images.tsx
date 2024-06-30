@@ -12,7 +12,7 @@ export default async function Images() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-4 py-2 md:p-4">
       {images.map((image) => {
         return (
           <div key={image.id} className="md:h-35 flex w-full flex-col md:w-60">
