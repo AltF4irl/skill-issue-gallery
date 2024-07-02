@@ -30,6 +30,23 @@ const useUploadThingInputProps = (...args: Input) => {
   };
 };
 
+const LoadingSpinnerSVG = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      stroke="#fff"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="white"
+    >
+      <g className="spinner_V8m1">
+        <circle cx="12" cy="12" r="9.5" fill="none" stroke-width="3"></circle>
+      </g>
+    </svg>
+  );
+};
+
 const UploadSvg = () => {
   return (
     <svg
@@ -38,7 +55,7 @@ const UploadSvg = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="md:size-8 size-6"
+      className="size-6 md:size-8"
     >
       <path
         strokeLinecap="round"
@@ -53,21 +70,28 @@ export function SimpleUploadButton() {
   const router = useRouter();
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin() {
-      toast("Uploading...", {
-        duration: 10000,
-        id: "upload-begin",
-      });
+      toast(
+        <div className="flex items-center gap-2 text-white">
+          <LoadingSpinnerSVG /> <span className="text-base">Uploading...</span>
+        </div>,
+        {
+          duration: 10000,
+          id: "upload-begin",
+        },
+      );
     },
     onClientUploadComplete(_res) {
       toast.dismiss("upload-begin");
-      toast("Upload Complete!");
+      toast(<div className="text-base">Upload complete!</div>);
       router.refresh();
     },
   });
 
   return (
     <div>
-      <label htmlFor="upload-button" className="cursor-pointer"><UploadSvg /></label>
+      <label htmlFor="upload-button" className="cursor-pointer">
+        <UploadSvg />
+      </label>
       <input
         id="upload-button"
         type="file"
