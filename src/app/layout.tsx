@@ -3,7 +3,6 @@ import "@uploadthing/react/styles.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { GeistSans } from "geist/font/sans";
 import { Inter } from "next/font/google";
 import TopNav from "~/components/topnav.server";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
@@ -36,7 +35,7 @@ export default function RootLayout({
         baseTheme: dark,
       }}
     >
-      <html lang="en" className={`${GeistSans.variable}`}>
+      <html lang="en">
         <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
@@ -46,14 +45,16 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans ${inter.variable} dark no-scrollbar`}>
+        <body className={`font-sans ${inter.variable} no-scrollbar dark`}>
           <div className="grid h-screen grid-rows-[auto,1fr] md:grid-cols-[auto,1fr]">
             <TopNav />
-            <main className="overflow-y-scroll md:no-scrollbar">{children}</main>
+            <main className="md:no-scrollbar overflow-y-scroll">
+              {children}
+            </main>
+            {modal}
           </div>
-          {modal}
           <div id="modal-root" />
-          <Toaster  />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

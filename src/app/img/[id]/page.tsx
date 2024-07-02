@@ -6,8 +6,8 @@ export default function PhotoPage({
   params: { id: string };
 }) {
   return (
-    <div>
-      <FullPageImaggeView photoId={id} />
+    <div className="h-screen">
+      <FullPageImaggeView bgColorCode="950" photoId={id} />
     </div>
   );
 }

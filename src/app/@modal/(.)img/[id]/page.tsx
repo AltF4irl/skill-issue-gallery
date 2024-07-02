@@ -9,7 +9,7 @@ export default function PhotoModal({
   return (
     <div>
       <Modal>
-        <FullPageImaggeView photoId={photoId} />
+        <FullPageImaggeView bgColorCode="900" photoId={photoId} />
       </Modal>
     </div>
   );

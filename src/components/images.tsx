@@ -15,17 +15,17 @@ export default async function Images() {
     <div className="flex flex-wrap justify-center gap-4 py-2 md:p-4">
       {images.map((image) => {
         return (
-          <div key={image.id} className="flex w-screen flex-col md:w-72">
+          <div key={image.id} className="flex w-screen flex-col md:w-96 border-y md:border-x border-neutral-800">
             <Link href={`/img/${image.id}`}>
               <Image
                 src={image.url}
                 alt={image.name}
                 width={480}
                 height={240}
-                className="md:object-cover md:h-48 w-screen md:w-72"
+                className="md:object-cover md:h-60 w-screen md:w-96"
               />
             </Link>
-            <p>{truncateStr(image.name)}</p>
+            <p className="p-1">{truncateStr(image.name)}</p>
           </div>
         );
       })}
