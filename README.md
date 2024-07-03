@@ -1,28 +1,21 @@
-# T3 Gallery
-
-The codebase from Theo's [T3 App Router Tutorial on YouTube](https://github.com/t3dotgg/t3gallery)
+# Skill Issue Gallery
 
 ## TODO
 
-- [x] Make it deploy (vercel)
-- [x] Scaffold basic ui with mock data
-- [x] Tidy up build process
-- [x] Actually set up a database (vercel postgres)
-- [x] Attach database to UI
-- [x] Add authentication (w/ clerk)
-- [x] Add image upload
-- [x] "taint" (server-only)
-- [x] Use Next/Image component
-- [x] Error management (w/ Sentry)
-- [x] Routing/image page (parallel route)
-- [x] Update upload button to be less cringe
-- [x] Analytics (posthog)
-- [x] Delete button (w/ Server Actions)
-- [x] Ratelimiting (upstash)
+- [x] Make it Deploy
+- [x] Scaffold basic UI with mock data
+- [x] Mod Build Proc
+- [x] Set up postreSQL DB
+- [x] Link DB to UI
+- [x] Add Auth
+- [x] Add img upload
+- [x] taint (server only)
+- [x] Implement Next/Image
+- [x] Error Management with sentry
+- [x] Parallel Routing
+- [ ] Delete Button
+- [ ] Ratelimiting
 
-## A challenge to the viewer
-
-- Fix the page layout for images of different resolutions
-- "Selecting" images on the gallery page
-- "infinite scroll"
-- Folders/albums
+- [Next.js](https://nextjs.org)
+- [Drizzle](https://orm.drizzle.team)
+- [Tailwind CSS](https://tailwindcss.com)
