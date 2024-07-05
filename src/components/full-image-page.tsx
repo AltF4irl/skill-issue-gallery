@@ -1,7 +1,7 @@
 import { getImage } from "~/server/queries";
-import { Button } from "~/components/ui/button";
 import clsx from "clsx";
 import { removeImageAction } from "~/server/actions";
+import DeleteButton from "./delete-button";
 
 export default async function FullPageImaggeView({
   photoId,
@@ -49,7 +49,7 @@ export default async function FullPageImaggeView({
 
           <div className="p-2">
             <form action={removeImage}>
-              <Button variant="destructive">Delete</Button>
+              <DeleteButton />
             </form>
           </div>
         </div>
