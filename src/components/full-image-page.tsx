@@ -15,14 +15,14 @@ export default async function FullPageImaggeView({
   const removeImage = removeImageAction.bind(null, Number(photoId));
 
   return (
-    <div className="no-scrollbar flex h-full w-screen min-w-0 flex-col items-center justify-center text-white">
+    <div className="no-scrollbar flex h-screen w-screen min-w-0 flex-col items-center justify-center text-white">
       <div
         className={clsx(
           {
             "bg-neutral-900": bgColorCode === "900",
             "bg-neutral-950": bgColorCode === "950",
           },
-          `border-1.5 no-scrollbar m-4 max-h-screen max-w-screen-md border border-neutral-800`,
+          `border-1.5 no-scrollbar m-4 !max-h-screen max-w-screen-md border border-neutral-800`,
         )}
       >
         <div className="flex-shrink flex-grow">
@@ -32,7 +32,7 @@ export default async function FullPageImaggeView({
             alt={image.name}
           />
         </div>
-        <div className="flex  w-full flex-shrink-0 flex-col border-neutral-800">
+        <div className="flex w-full flex-shrink-0 flex-col border-neutral-800">
           <div className="border-b border-neutral-800 p-2 text-center text-xl">
             {image.name}
           </div>

@@ -13,7 +13,7 @@
 - [x] Implement Next/Image
 - [x] Error Management with sentry
 - [x] Parallel Routing
-- [ ] Delete Button
+- [x] Delete Button
 - [ ] Ratelimiting
 
 - [Next.js](https://nextjs.org)

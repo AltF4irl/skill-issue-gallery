@@ -80,6 +80,10 @@ export function SimpleUploadButton() {
         },
       );
     },
+    onUploadError(_err) {
+      toast.dismiss("upload-begin");
+      toast.error("Upload failed");
+    },
     onClientUploadComplete(_res) {
       toast.dismiss("upload-begin");
       toast(<div className="text-base">Upload complete!</div>);
