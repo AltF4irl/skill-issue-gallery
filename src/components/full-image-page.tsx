@@ -2,6 +2,8 @@ import { getImage } from "~/server/queries";
 import clsx from "clsx";
 import { removeImageAction } from "~/server/actions";
 import DeleteButton from "./delete-button";
+import { redirect } from "next/navigation";
+import { Button } from "./ui/button";
 
 export default async function FullPageImaggeView({
   photoId,
@@ -47,10 +49,25 @@ export default async function FullPageImaggeView({
             <div>{image.createdAt.toLocaleDateString()}</div>
           </div>
 
-          <div className="p-2">
-            <form action={removeImage}>
-              <DeleteButton />
-            </form>
+          <div className="flex w-full flex-row justify-between">
+            <div className="p-2">
+              <form action={removeImage}>
+                <DeleteButton />
+              </form>
+            </div>
+
+            <div className="p-2">
+              <form
+                action={async  () => {
+                  "use server";
+                  redirect("/");
+                }}
+              >
+                <Button variant="ghost">
+                  Go Back
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
