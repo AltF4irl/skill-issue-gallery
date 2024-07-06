@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import FullPageImaggeView from "~/components/full-image-page";
+import FullPageImageSkeleton from "~/components/full-image-skeleton";
 
 export default function PhotoPage({
   params: { id },
@@ -7,7 +9,9 @@ export default function PhotoPage({
 }) {
   return (
     <div className="h-screen">
-      <FullPageImaggeView bgColorCode="950" photoId={id} />
+      <Suspense fallback={<FullPageImageSkeleton bgColorCode="950" />}>
+        <FullPageImaggeView bgColorCode="950" photoId={id} />
+      </Suspense>
     </div>
   );
 }
