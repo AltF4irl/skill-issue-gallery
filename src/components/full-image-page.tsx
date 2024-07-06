@@ -4,6 +4,7 @@ import { removeImageAction } from "~/server/actions";
 import DeleteButton from "./delete-button";
 import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default async function FullPageImaggeView({
   photoId,
@@ -28,10 +29,14 @@ export default async function FullPageImaggeView({
         )}
       >
         <div className="flex-shrink flex-grow">
-          <img
+          <Image
             src={image.url}
             className="w-full object-contain md:max-h-[60vh]"
+            height={360}
+            width={500}
             alt={image.name}
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAADwCAYAAAAJkrPKAAACtElEQVR42u3VMQEAAAQAQTpZ1JZQD+4i/PLZXRMAvJMGAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAGAABgBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgBgAAYAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAYAAGAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAGAAMgAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQBgAAAYAAAGAIABAGAAABgAAAYAgAEAYAAAGAAABgCAAQAYAAAGAIABAGAAAFyz8xRDgAr0FRgAAAAASUVORK5CYII="
+            placeholder="blur"
           />
         </div>
         <div className="flex w-full flex-shrink-0 flex-col border-neutral-800">
@@ -58,14 +63,12 @@ export default async function FullPageImaggeView({
 
             <div className="p-2">
               <form
-                action={async  () => {
+                action={async () => {
                   "use server";
                   redirect("/");
                 }}
               >
-                <Button variant="ghost">
-                  Go Back
-                </Button>
+                <Button variant="ghost">Go Back</Button>
               </form>
             </div>
           </div>
